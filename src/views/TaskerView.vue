@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <h3>
       tasks: {{ tasks }}
@@ -88,3 +88,4 @@ export default {
   }
 }
 </script>
+ -->
