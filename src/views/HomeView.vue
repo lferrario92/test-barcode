@@ -16,6 +16,13 @@
         reset 
       </button>
 
+      
+      <div id="sourceSelectPanel" style="display:none">
+        <label for="sourceSelect">Change video source:</label>
+        <select id="sourceSelect" style="max-width:400px">
+        </select>
+      </div>
+
       <div>
         Result:
 
