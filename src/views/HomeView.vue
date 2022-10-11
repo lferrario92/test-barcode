@@ -2,7 +2,7 @@
   <div class="home">
     <div>
       <div>
-        <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
+        <video id="video" style="border: 1px solid gray"></video>
       </div>
 
       <button
@@ -16,7 +16,7 @@
         reset 
       </button>
 
-      
+
       <div id="sourceSelectPanel" style="display:none">
         <label for="sourceSelect">Change video source:</label>
         <select id="sourceSelect" style="max-width:400px">
@@ -25,8 +25,10 @@
 
       <div>
         Result:
-
-        {{ result }}
+        <br>
+        <h4>
+          {{ result }}
+        </h4>
       </div>
     </div>
   </div>
@@ -89,3 +91,11 @@ export default {
   }
 }
 </script>
+
+<style>
+
+#video {
+  width: 100%;
+  max-width: 650px;
+}
+</style>

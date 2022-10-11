@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import CodesView from '../views/CodesView.vue'
 // import TaskerView from '../views/TaskerView.vue'
 
 Vue.use(VueRouter)
@@ -16,6 +17,11 @@ const routes = [
   //   name: 'tasker',
   //   component: TaskerView
   // },
+  {
+    path: '/Codes',
+    name: 'Codes',
+    component: CodesView
+  },
   {
     path: '/about',
     name: 'about',
