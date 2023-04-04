@@ -22,8 +22,8 @@
         <select id="sourceSelect" style="max-width:400px">
         </select>
       </div>
-
       <div>
+        counter: {{ counter }}
         Result:
         <br>
         <h4>
@@ -34,9 +34,12 @@
   </div>
 </template>
 
+<script src="@/scripts/BrowserPrint-3.0.216.min.js"></script>
+
 <script>
+// import { BrowserPrint } from '@/scripts/BrowserPrint-3.0.216.min.js'
 /* eslint-disable */
-import { BrowserMultiFormatReader } from '@zxing/library';
+import { BrowserMultiFormatReader, BarcodeFormat } from '@zxing/library';
 
 export default {
   name: 'HomeView',
@@ -44,11 +47,16 @@ export default {
     return {
       selectedDeviceId: null,
       codeReader: null,
-      result: ''
+      result: '',
+      counter: 0
     }
   },
   mounted () {
-    this.codeReader = new BrowserMultiFormatReader()
+    const time = 100
+    const hints = new Map()
+    hints.set([BarcodeFormat.PDF_417])
+
+    this.codeReader = new BrowserMultiFormatReader(hints, time)
     console.log('ZXing code reader initialized')
     this.codeReader.listVideoInputDevices()
     .then((videoInputDevices) => {
@@ -74,11 +82,45 @@ export default {
     .catch((err) => {
       console.error(err)
     })
+
+    // this.BrowserPrint.getDefaultDevice("printer", function(device)
+    //   {
+    
+    //     //Add device to list of devices and to html select element
+    //     selected_device = device;
+    //     devices.push(device);
+    //     var html_select = document.getElementById("selected_device");
+    //     var option = document.createElement("option");
+    //     option.text = device.name;
+    //     html_select.add(option);
+        
+    //     //Discover any other devices available to the application
+    //     BrowserPrint.getLocalDevices(function(device_list){
+    //       for(var i = 0; i < device_list.length; i++)
+    //       {
+    //         //Add device to list of devices and to html select element
+    //         var device = device_list[i];
+    //         if(!selected_device || device.uid != selected_device.uid)
+    //         {
+    //           devices.push(device);
+    //           var option = document.createElement("option");
+    //           option.text = device.name;
+    //           option.value = device.uid;
+    //           html_select.add(option);
+    //         }
+    //       }
+          
+    //     }, function(){alert("Error getting local devices")},"printer");
+        
+    //   }, function(error){
+    //     alert(error);
+    //   })
   },
   methods: {
     scan () {
       this.codeReader.decodeFromVideoDevice(this.selectedDeviceId, 'video', (result, err) => {
         if (result) {
+          this.counter++
           this.result = result
         }
       })

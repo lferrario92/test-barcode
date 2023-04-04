@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CodesView from '../views/CodesView.vue'
+import TestStylesView from '../views/TestStylesView.vue'
 // import TaskerView from '../views/TaskerView.vue'
 
 Vue.use(VueRouter)
@@ -21,6 +22,11 @@ const routes = [
     path: '/Codes',
     name: 'Codes',
     component: CodesView
+  },
+  {
+    path: '/teststyles',
+    name: 'TestStyles',
+    component: TestStylesView
   },
   {
     path: '/about',
