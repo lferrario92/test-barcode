@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <h4>
+      lib actual de dcs
+    </h4>
     <div>
       <div>
         <video id="video" style="border: 1px solid gray"></video>

@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import CodesView from '../views/CodesView.vue'
 import TestStylesView from '../views/TestStylesView.vue'
 import NewLibView from '../views/NewLibView.vue'
+import LastLibView from '../views/LastLibView.vue'
 // import TaskerView from '../views/TaskerView.vue'
 
 Vue.use(VueRouter)
@@ -28,6 +29,11 @@ const routes = [
     path: '/newlib',
     name: 'NewLib',
     component: NewLibView
+  },
+  {
+    path: '/lastlib',
+    name: 'LastLib',
+    component: LastLibView
   },
   {
     path: '/teststyles',

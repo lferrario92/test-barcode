@@ -3,6 +3,7 @@
     <nav>
       <router-link to="/">Home</router-link> | 
       <router-link to="/newlib">New Lib</router-link> | 
+      <router-link to="/lastlib">Last Lib</router-link> | 
       <router-link to="/codes">Codes</router-link>
       <!-- <router-link to="/about">About</router-link> -->
     </nav>
