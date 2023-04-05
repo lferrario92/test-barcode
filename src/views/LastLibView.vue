@@ -96,7 +96,7 @@ export default {
       let test = ZXing
       var zxing = ZXing().then((instance) => {
         zxing = instance; // this line is supposedly not required but with current emsdk it is :-/
-        // const cameraSelector = document.getElementById("cameraSelector");
+        const cameraSelector = document.getElementById("cameraSelector");
         const format = document.getElementById("format");
         const mode = document.getElementById("mode");
         const canvas = document.getElementById("canvas");
@@ -179,9 +179,9 @@ export default {
             });
         };
 
-        // cameraSelector.addEventListener("change", function () {
-        //   updateVideoStream(this.value);
-        // });
+        cameraSelector.addEventListener("change", function () {
+          updateVideoStream(this.value);
+        });
 
         updateVideoStream();
       });
