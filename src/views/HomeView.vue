@@ -39,7 +39,7 @@
 <script>
 // import { BrowserPrint } from '@/scripts/BrowserPrint-3.0.216.min.js'
 /* eslint-disable */
-import { BrowserMultiFormatReader, BarcodeFormat } from '@zxing/library';
+import { BrowserPDF417Reader, BarcodeFormat } from '@zxing/library';
 
 export default {
   name: 'HomeView',
@@ -56,7 +56,7 @@ export default {
     const hints = new Map()
     hints.set([BarcodeFormat.PDF_417])
 
-    this.codeReader = new BrowserMultiFormatReader(hints, time)
+    this.codeReader = new BrowserPDF417Reader(time)
     console.log('ZXing code reader initialized')
     this.codeReader.listVideoInputDevices()
     .then((videoInputDevices) => {
